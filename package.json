@@ -1,0 +1,37 @@
+{
+  "name": "collaborative-note-taking-app",
+  "version": "1.0.0",
+  "description": "A collaborative note taking app with web sockets",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HannahTa/collaborative-note-taking-app.git"
+  },
+  "keywords": [
+    "websockets",
+    "note",
+    "app"
+  ],
+  "author": "Hannah Petherick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HannahTa/collaborative-note-taking-app/issues"
+  },
+  "homepage": "https://github.com/HannahTa/collaborative-note-taking-app#readme",
+  "dependencies": {
+    "vuex": "^3.1.1",
+    "ws": "^7.1.1"
+  },
+  "devDependencies": {
+    "css-loader": "^3.1.0",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6"
+  }
+}
