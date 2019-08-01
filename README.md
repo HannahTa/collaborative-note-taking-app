@@ -54,3 +54,6 @@ When you have multiple screens up for the app and you add a note in one of them,
 - Add a passcode onto the app on first set-up, so people who knows the pass code can only see the notes
 - Parse the text before storing/displaying to avoid XSS and SQL injection
 - Keep the notes on a secure network connection
+
+---
+Hannah Petherick
