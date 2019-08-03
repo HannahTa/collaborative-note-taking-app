@@ -55,5 +55,23 @@ When you have multiple screens up for the app and you add a note in one of them,
 - Parse the text before storing/displaying to avoid XSS and SQL injection
 - Keep the notes on a secure network connection
 
+# Additonal Questions
+
+## Could you provide a rough breakdown of the time spent on coding / research / learning
+I spent the first two hours learning and researching while building the frame work of the app. I then spent the remaining two hours implementing the features.
+
+_After the additonal two hours, I spent the 30 minutes focusing on the UI/grid to get the layout I was picturing. Then the next hour and 15 minutes was implmenting the editing functionality. Once the editing functionality was implemented and I was happy, I spend the remaining time improving the UI._
+
+## What was the hardest aspect of this challenge?
+The hardest aspect for me was working with a websocket which would only echoed back the messages which I sent it. I spent some time trying to workout how I would inform the users what time of message is being sent and to do different actions based on the message type.
+
+_Within the two hours, remembering to update the function paramters and field names kept causing issues and I had to remember to step thought the code and check if everything is correct_
+
+## What was the easiest aspect of this challenge?
+Building the components and using Vuex. Being able to map only functions I needed for each component and changing the states made building the app easier. 
+
+_Using CSS grid made creating the layout of the app easy and flexiable_
+
 ---
+
 Hannah Petherick

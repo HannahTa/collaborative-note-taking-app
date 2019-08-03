@@ -1,17 +1,8 @@
 <template>
-  <div>
+  <div class="app">
     Status: {{onlineStatus}}
-    <div>
-    <input class="new-note-title"
-    autofocus
-    autocomplete="false"
-    placeholder="Add note title and press enter"
-    @keyup.enter="addNote"
-    >
-    </div>
-    <!-- TODO: Make creating a note nicer for the user -->
     <NoteList />
-    <EditNote />
+    <EditNote v-if="isNoteSelected"/>
   </div>
 </template>
 
@@ -22,28 +13,29 @@ import EditNote from './EditNote.vue'
 
 export default {
   components: { NoteList, EditNote },
-  methods: {
-    ...mapActions([
-      'sendNotes'
-    ]),
-    addNote (e) {
-      const text = e.target.value;
-
-      if (text.trim()) {
-        const note = {
-          title: text,
-          body: ""
-        }
-
-        this.$store.commit('addNote', note);
-        this.sendNotes()
-      }
-
-      e.target.value = '';
-    }
-  },
   computed: mapGetters([
-    'onlineStatus'
+    'onlineStatus',
+    'isNoteSelected'
   ])
 }
 </script>
+
+<style>
+.app {
+  display: grid;
+  grid-template-columns: 250px auto;
+  grid-template-rows: 50px auto;
+  grid-gap: 10px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+li {
+  list-style: none;
+  padding: 10px;
+  background-color: rgb(241, 241, 241);
+  margin: 5px;
+  height: 40px;
+}
+</style>

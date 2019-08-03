@@ -1,7 +1,7 @@
 <template>
-    <li v-on:click="setSelectedNote(note)">
-      Title: {{note.title}} Body: {{note.body}}
-      <button @click="removeNote(note)">Delete</button>
+    <li v-on:click="setSelectedNote(noteIndex)">
+      Title: {{note.title}}
+      <span class='deleteButton' @click="deleteNote(noteIndex)">🗑</span>
     </li>
     <!-- TODO: stop selecting note when trying to delete -->
 </template>
@@ -11,12 +11,26 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'NoteItem',
-  props: ['note'],
+  props: ['note', 'noteIndex'],
   methods: {
     ...mapActions([
       'setSelectedNote',
-      'removeNote'
-    ])
+      'removeNote',
+      'sendNotes'
+    ]),
+    deleteNote(noteIndex) {
+      this.removeNote(noteIndex);
+      // TODO: fixed error which occuers when deleteing the note
+      // Add this method in the remove notes change
+      this.sendNotes()
+    }
   }
 }
 </script>
+
+<style>
+.deleteButton {
+  font-size: 20px;
+  float: right;
+}
+</style>

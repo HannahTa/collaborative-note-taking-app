@@ -4,7 +4,11 @@
       v-for="(note, index) in allNotes"
       :key="index"
       :note="note"
+      :noteIndex="index"
     />
+    <li>
+      <AddNote />
+    </li>
   </ul>
 </template>
 
@@ -13,9 +17,10 @@
 
 import { mapActions, mapGetters } from 'vuex'
 import NoteItem from './NoteItem.vue'
+import AddNote from './AddNote.vue'
 
 export default {
-  components: { NoteItem },
+  components: { NoteItem, AddNote },
   computed: mapGetters([
     'allNotes'
   ]),
@@ -39,3 +44,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.notes-list {
+  margin: 0px;
+  padding: 5px;
+  grid-column: 1;
+  grid-row: 2;
+}
+</style>
